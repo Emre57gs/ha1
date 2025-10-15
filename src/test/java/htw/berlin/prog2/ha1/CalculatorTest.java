@@ -89,7 +89,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Kein Ahnung") //Subtraktion von zwei positven Zahlen
+    @DisplayName("Kein Ahnung") //Subtraktion von zwei positiven Zahlen
     void testPositiveSubtraktion() {
         Calculator calc = new Calculator();
 
@@ -102,9 +102,38 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-
-
     }
+    @Test
+    @DisplayName("Kein Ahnung2")
+    void testFalscheDarstellung() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressDotKey();
+        calc.pressDigitKey(0);
+        calc.pressEqualsKey();
+        String expected = "1";
+
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    @DisplayName("Kein Ahnung3")
+    void testProzentumwandlung() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(9);
+        calc.pressDotKey();
+        calc.pressDigitKey(3);
+        calc.pressUnaryOperationKey("%");
+        String expected = "0.093";
+
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
 
 
     //TODO hier weitere Tests erstellen
