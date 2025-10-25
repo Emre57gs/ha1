@@ -74,8 +74,6 @@ public class Calculator {
     public void pressUnaryOperationKey(String operation) {
         latestValue = Double.parseDouble(screen);
         latestOperation = operation;
-
-
         var result = switch(operation) {
             case "√" -> Math.sqrt(Double.parseDouble(screen));
             case "%" -> Double.parseDouble(screen) / 100;
@@ -83,10 +81,8 @@ public class Calculator {
             default -> throw new IllegalArgumentException();
         };
         screen = Double.toString(result);
-
-
         if(screen.equals("NaN")) screen = "Error";
-        if(screen.endsWith(".0")) screen = screen.substring(0, screen.length() - 1);
+        if(screen.contains(".0") && screen.length() > 6) screen = screen.substring(0, 5); // weitere if Bedingung hinzugefügt
         if(screen.contains(".") && screen.length() > 11) screen = screen.substring(0, 10);
 
     }
