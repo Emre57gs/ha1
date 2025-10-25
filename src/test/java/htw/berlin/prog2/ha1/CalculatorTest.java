@@ -104,7 +104,7 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
     @Test
-    @DisplayName("Kein Ahnung2")
+    @DisplayName("Darstellung sollte korrekt wiedergegeben werden")
     void testFalscheDarstellung() {
         Calculator calc = new Calculator();
 
@@ -119,7 +119,7 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
     @Test
-    @DisplayName("Kein Ahnung3")
+    @DisplayName("Korrekte Darstellung von Prozentumwandlung")
     void testProzentumwandlung() {
         Calculator calc = new Calculator();
 
